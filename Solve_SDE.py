@@ -66,15 +66,15 @@ def Solve_SDE(alfa=None, beta=None, X0=None, dt=1.0, N=100, t0=0.0, DW=None):
     dY = (r X - Y - X*Z) + dW2
     dZ = (X*Y - b Z)  + dW3
     
-    
-        xL = lambda X, t: 10.0 * (X[1] - X[0])  ;
-        yL = lambda X, t: 28.0 * X[0] - X[1] - X[0] * X[2] ;
-        zL = lambda X, t: X[0] * X[1] - 8.0/3.0 * X[2] ;
 
-        alfa = lambda X, t: array( [xL(X,t), yL(X,t), zL(X,t)] ); 
-        beta = lambda X, t: array( [     X[1],      1,      1] ); 
-        X0 = [3.4, -1.3, 28.3];
-        Y = Solve_SDE(alfa=alfa, beta=beta, X0=X0, dt=0.01, N=10000)
+    xL = lambda X, t: 10.0 * (X[1] - X[0])  ;
+    yL = lambda X, t: 28.0 * X[0] - X[1] - X[0] * X[2] ;
+    zL = lambda X, t: X[0] * X[1] - 8.0/3.0 * X[2] ;
+
+    alfa = lambda X, t: array( [xL(X,t), yL(X,t), zL(X,t)] ); 
+    beta = lambda X, t: array( [     X[1],      1,      1] ); 
+    X0 = [3.4, -1.3, 28.3];
+    Y = Solve_SDE(alfa=alfa, beta=beta, X0=X0, dt=0.01, N=10000)
     
         """
     __author__ = 'Lampros Mountrakis'
