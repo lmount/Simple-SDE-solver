@@ -55,10 +55,10 @@ def Solve_SDE(alfa=None, beta=None, X0=None, dt=1.0, N=100, t0=0.0, DW=None):
     dX = 0 + 1*dW
     
     
-        alfa = lambda X,t: 0
-        beta = lambda X,t: 1
-        Y = Solve_SDE(alfa=alfa, beta=beta, dt=1, N=1000)
-    
+    alfa = lambda X,t: 0
+    beta = lambda X,t: 1
+    t, Y = Solve_SDE(alfa=alfa, beta=beta, dt=1, N=1000)
+
         
         
     == Stochastic Lorenz Equation:
@@ -74,7 +74,7 @@ def Solve_SDE(alfa=None, beta=None, X0=None, dt=1.0, N=100, t0=0.0, DW=None):
     alfa = lambda X, t: array( [xL(X,t), yL(X,t), zL(X,t)] ); 
     beta = lambda X, t: array( [     X[1],      1,      1] ); 
     X0 = [3.4, -1.3, 28.3];
-    Y = Solve_SDE(alfa=alfa, beta=beta, X0=X0, dt=0.01, N=10000)
+    t, Y = Solve_SDE(alfa=alfa, beta=beta, X0=X0, dt=0.01, N=10000)
     
         """
     __author__ = 'Lampros Mountrakis'
